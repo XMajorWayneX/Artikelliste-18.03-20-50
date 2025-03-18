@@ -1,0 +1,423 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* Dark background */
+  color: #fff; /* Light text */
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #444; /* Darker container */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.nav button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #555; /* Dark button */
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav button:hover {
+  background-color: #777; /* Lighter dark button */
+}
+
+.nav button.active {
+  background-color: #777; /* Lighter dark button */
+  color: white;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #777; /* Darker border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #555; /* Dark input background */
+  color: #fff;
+}
+
+select[multiple] {
+  height: 100px;
+}
+
+button {
+  background-color: #5cb85c; /* Green button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4cae4c; /* Darker green button */
+}
+
+button:active {
+  background-color: #3d8b3d; /* Even darker green button */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #555; /* Darker border */
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Distribute space between items */
+}
+
+li:last-child {
+  border-bottom: none; /* Remove border from last row */
+}
+
+/* Specific style for delete button */
+.delete-button,
+button[onClick*="handleDeleteAllItems"] {
+  background-color: #d9534f; /* Red button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover,
+button[onClick*="handleDeleteAllItems"]:hover {
+  background-color: #c9302c; /* Darker red button */
+}
+
+.delete-button:active,
+button[onClick*="handleDeleteAllItems"]:active {
+  background-color: #b82e2b; /* Even darker red button */
+}
+
+.delete-button {
+  float: right; /* Align to the right */
+}
+
+/* Region Management Styles */
+.region-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.region-form input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.region-list {
+  list-style: none;
+  padding: 0;
+}
+
+.region-item {
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.region-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.region-header span {
+  font-weight: bold;
+}
+
+.price-adjustment {
+  display: flex;
+}
+
+.price-adjustment input[type="number"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+/* Item Search Styles */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-container > * {
+  flex: 1 1 150px; /* Distribute items evenly */
+}
+
+.filter-container input[type="text"],
+.filter-container select,
+.filter-container button {
+  width: auto; /* Adjust width to content */
+}
+
+/* Landing Page Styles */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.landing-container h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.auth-container {
+  background-color: #555;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+}
+
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #5cb85c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #4cae4c;
+}
+
+.auth-container p {
+  margin-top: 15px;
+}
+
+.auth-container .error-message {
+  color: #d9534f;
+  margin-top: 10px;
+}
+
+/* Region Tiles Styles */
+.region-tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.region-tile {
+  background: linear-gradient(45deg, #FF8C00, #FFA500); /* Orange gradient */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1 1 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  outline: none;
+}
+
+.region-tile:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Item Styles */
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.item-info {
+  flex: 1;
+  padding: 10px;
+}
+
+.item-name-price {
+  background-color: #8e44ad; /* Purple background */
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+  width: 200px; /* Fixed width for name and price */
+  text-align: center;
+}
+
+.item-properties {
+  flex: 2;
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+/* Copy Item Button Style */
+button.copy-button {
+  background-color: #3498db !important; /* Blue button */
+  color: white !important;
+  transition: background-color 0.3s ease;
+}
+
+button.copy-button:hover {
+  background-color: #2980b9 !important; /* Darker blue button */
+}
+
+button.copy-button:active {
+  background-color: #21618c !important; /* Even darker blue button */
+}
+
+/* Favorite Item Style */
+.item-name-price.favorite {
+  background-color: #FFA500; /* Orange background */
+  color: white;
+}
+
+/* Favorites Button Style */
+button[onClick*="handleShowFavorites"] {
+  background-color: #FFA500; /* Orange background */
+  color: white;
+}
+
+button[onClick*="handleShowFavorites"]:hover {
+  background-color: #FF8C00; /* Darker Orange background */
+}
+
+/* Success Message Style */
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Manual Entries Table Styles */
+.manual-entries-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #555; /* Dark table background */
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures rounded corners are respected */
+}
+
+.manual-entries-table th,
+.manual-entries-table td {
+  padding: 8px 10px; /* Reduced padding for smaller rows */
+  text-align: left;
+  border-bottom: 1px solid #777; /* Darker border */
+}
+
+.manual-entries-table th {
+  background-color: #666; /* Slightly lighter header */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.manual-entries-table tbody tr {
+  height: 30px; /* Reduced row height */
+}
+
+.manual-entries-table tbody tr:last-child td {
+  border-bottom: none; /* Remove border from last row */
+}
+
+.manual-entries-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle hover effect */
+}
+
+.manual-entries-table input[type="text"],
+.manual-entries-table select {
+  width: 100%;
+  padding: 6px; /* Reduced padding for smaller inputs */
+  margin: 4px 0;
+  border: 1px solid #777;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #444;
+  color: #fff;
+}
+
+.manual-entries-table button {
+  background-color: #6c757d; /* Gray button */
+  color: white;
+  padding: 6px 10px; /* Reduced padding for smaller buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.manual-entries-table button:hover {
+  background-color: #5a6268; /* Darker gray button */
+}
+
+.due-date-exceeded {
+  color: white;
+  background-color: #dc3545;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.overdue-indicator {
+  color: white;
+  background-color: #dc3545;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
